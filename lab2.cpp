@@ -268,6 +268,15 @@ int nhiphantohop(int n, int k){
         return nhiphantohop(n-1,k)+nhiphantohop(n-1,k-1);
     }
 }
+//de quy duoi
+int giaithua(int n, int result =1){
+    if(n==0){
+        return result;
+    }
+    else{
+        return giaithua(n-1,n*result);
+    }
+}
 int main() {
     //bai 1:
     //a
@@ -310,5 +319,7 @@ int main() {
     cout << 6 << " la so " << (isEven(n) ? "chan" : "le") << endl;
     //de quy nhi phan:  
     cout<<"to hop 8C3: "<<nhiphantohop(8,3)<<endl;
+    //de quy duoi
+    cout<<"giai thua cua 5 la: "<<giaithua(5)<<endl;
     return 0;
 }
