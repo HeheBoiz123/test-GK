@@ -1,12 +1,15 @@
 ﻿#include <iostream>
 using namespace std;
+void swap (int &a, int &b){
+    int temp= a;
+    a=b;
+    b=temp;
+}
 // Hàm hoán đổi các hàng của mảng
 void swapRow(int arr[][3], int size) {
     for (int i = 0; i < size / 2; ++i) {
         for (int j = 0; j < size; ++j) {
-            int temp = arr[i][j];
-            arr[i][j] = arr[size - 1 - i][j];
-            arr[size - 1 - i][j] = temp;
+            swap(arr[i][j], arr[size-1-i][j]);
         }
     }
 }
@@ -15,9 +18,7 @@ void swapRow(int arr[][3], int size) {
 void swapCol(int arr[][3], int size) {
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size / 2; ++j) {
-            int temp = arr[i][j];
-            arr[i][j] = arr[i][size - 1 - j];
-            arr[i][size - 1 - j] = temp;
+            swap(arr[i][j],arr[i][size -1 -j]);
         }
     }
 }
@@ -34,7 +35,6 @@ void xoay_mang(int arr[][3], int size) {
         }
     }
 }
-
 // Hàm in mảng
 void xuat_mang(int arr[][3], int size) {
     for (int i = 0; i < size; ++i) {
