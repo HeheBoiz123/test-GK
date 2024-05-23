@@ -6,12 +6,6 @@ using namespace std;
 const int N = 9;
 const int ROW = 9;
 const int COL = 9;
-int _strlen(char* s) {
-    char* t;
-    t = s;
-    while (*s) s++;
-    return s - t;
-}
 void xuat_Sudoku(int Sudoku[ROW][COL] ) {
     for (int row = 0; row < 9; ++row) {
         for (int col = 0; col < 9; ++col) {
@@ -78,36 +72,6 @@ bool solve(int board[ROW][COL], int row, int col) {
 
 
 int main() {
-    cout << "|Cau a bai 1|\n";
-    char* s;
-    s = (char*)"Totoro";
-    cout << "The string '" << s << "' has length " << _strlen(s) << endl;
-    s = (char*)"\0";
-    cout << "The string '" << s << "' has length " << _strlen(s) << endl;
-    cout << "\n|Cau b bai 1|\n";
-    int* ptr = nullptr;
-    int val = 10;
-    ptr = &val;
-    cout << ptr << endl;
-    cout << *ptr << endl;
-    cout << "\n|Cau c bai 1|\n";
-    int* p1;
-    int m = 10;
-    p1 = &m;
-    int n = *p1;
-    cout << n << endl;
-    cout << "\n|Cau d bai 1|\n";
-    srand(time(NULL));
-    int* p = new int[10];
-    for (int i = 0; i < 10; i++) {
-        *(p + i) = rand() % 20;
-    }
-    for (int i = 0; i < 10; i++) {
-        cout << *(p + i) << " ";
-    }
-    cout << endl;
-    delete[]p;
-    cout << "\n|Bai 2|\n";
     int Sudoku[9][9] = {
     {5, 3, 0, 0, 7, 0, 0, 0, 0},
     {6, 0, 0, 1, 9, 5, 0, 0, 0},
